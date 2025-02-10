@@ -1,6 +1,6 @@
 services:
   app:
-    image: denoland/deno:alpine-2.0.2
+    image: denoland/deno:2.1.9 # Alpine image leads to errors and does not allow VS to start.
     command: sleep infinity # Is necessary so that the container does not shut down.
     volumes:
       - "../:/workspace"
