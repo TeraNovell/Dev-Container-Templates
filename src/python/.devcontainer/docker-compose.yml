@@ -1,0 +1,28 @@
+services:
+  app:
+    image: python:3-slim-trixie
+    command: sleep infinity # Is necessary so that the container does not shut down.
+    volumes:
+      - "../:/workspace"
+# Uncommented for Postgresql setup
+#    networks:
+#      - app
+
+#  app-db:
+#    image: bitnami/postgresql:16
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - app-db:/bitnami/postgresql
+#    networks:
+#      - app
+#    environment:
+#      ALLOW_EMPTY_PASSWORD: "yes"
+
+#networks:
+#  app:
+#    driver: bridge
+
+#volumes:
+#  app-db:
+#    driver: local
