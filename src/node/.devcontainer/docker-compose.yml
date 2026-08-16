@@ -1,0 +1,29 @@
+services:
+  app:
+    image: node:slim
+    command: sleep infinity # Required to keep the container running
+    volumes:
+      - "../:/workspace"
+# Uncommented for a MariaDB setup
+#     networks:
+#       - app
+
+#   db:
+#     image: mariadb:latest
+#     ports:
+#       - "3306:3306"
+#     volumes:
+#       - db-data:/var/lib/mysql
+#     networks:
+#       - app
+#     environment:
+#       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
+#       MARIADB_AUTO_UPGRADE: true
+
+# networks:
+#  app:
+#    driver: bridge
+
+# volumes:
+#  db-data:
+#    driver: local
